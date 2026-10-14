@@ -1,0 +1,111 @@
+{
+  "inicio": "NO_01",
+  "badges": {
+    "cacador_alucinacoes": {
+      "nome": "Caçador de Alucinações",
+      "icone": "🔎",
+      "descricao": "Descobriste referências que a IA inventou."
+    },
+    "autoria_transparente": {
+      "nome": "Autoria Transparente",
+      "icone": "📜",
+      "descricao": "Declaraste o uso de IA e entregaste fontes verificadas."
+    },
+    "segunda_oportunidade": {
+      "nome": "Segunda Oportunidade",
+      "icone": "🌱",
+      "descricao": "Assumiste o erro a tempo de o corrigir."
+    }
+  },
+  "nos": {
+    "NO_01": {
+      "titulo": "O prazo está a acabar",
+      "texto": "São 22h de domingo. O relatório final de Ética e Tecnologia tem de ser entregue à meia-noite. Pediste a um assistente de IA que redigisse o texto e ele devolveu quatro páginas fluentes, com cinco referências bibliográficas. Parece perfeito, mas nunca ouviste falar de duas daquelas obras. O regulamento da faculdade permite IA como apoio, desde que o seu uso seja declarado e o conteúdo verificado.",
+      "opcoes": [
+        {
+          "texto": "Verificar cada referência numa base de dados académica",
+          "destino": "NO_02A",
+          "efeitos": { "integridade": 5, "tempo": -3, "pontos": 15 },
+          "dica": "Demora, mas protege o teu nome."
+        },
+        {
+          "texto": "Entregar já, o texto parece sólido",
+          "destino": "NO_02B",
+          "efeitos": { "integridade": -20, "tempo": 0, "pontos": 5 },
+          "dica": "É rápido, mas podes estar a citar obras que não existem."
+        }
+      ]
+    },
+    "NO_02A": {
+      "titulo": "Duas fontes não existem",
+      "texto": "Pesquisas no catálogo da biblioteca e no Google Académico e confirmas três referências. As outras duas têm autores e títulos credíveis, mas não existem: são alucinações do modelo. Faltam menos de duas horas para o prazo e tens de decidir como corrigir o relatório.",
+      "badge": "cacador_alucinacoes",
+      "opcoes": [
+        {
+          "texto": "Substituir por fontes reais e declarar o uso de IA num anexo",
+          "destino": "FIM_BOM",
+          "efeitos": { "integridade": 10, "tempo": -3, "pontos": 40 },
+          "dica": "Dá trabalho, mas cumpres o regulamento."
+        },
+        {
+          "texto": "Apagar as duas citações e entregar sem mencionar a IA",
+          "destino": "FIM_NEUTRO",
+          "efeitos": { "integridade": -10, "tempo": -1, "pontos": 10 },
+          "dica": "Resolves o sintoma, mas omites o que o regulamento exige."
+        }
+      ]
+    },
+    "NO_02B": {
+      "titulo": "O docente nota algo estranho",
+      "texto": "Dois dias depois, o docente convida-te para uma conversa. Tentou encontrar duas das referências do teu relatório e elas não existem. Pergunta-te como as escolheste.",
+      "opcoes": [
+        {
+          "texto": "Admitir o uso de IA e mostrar como vais corrigir o trabalho",
+          "destino": "FIM_REDENCAO",
+          "efeitos": { "integridade": 15, "tempo": -2, "pontos": 25 },
+          "dica": "Desconfortável, mas a franqueza conta a teu favor."
+        },
+        {
+          "texto": "Dizer que foi um simples erro de digitação",
+          "destino": "FIM_MAU",
+          "efeitos": { "integridade": -40, "tempo": 0, "pontos": 0 },
+          "dica": "Muito arriscado: o histórico do documento pode contradizer-te."
+        }
+      ]
+    },
+    "FIM_BOM": {
+      "final": true,
+      "finalTipo": "bom",
+      "icone": "🏛️",
+      "titulo": "Final: Autoria transparente",
+      "texto": "Entregas a tempo, com fontes verificadas e uma nota a explicar como a IA te ajudou. O docente valoriza a honestidade e a qualidade das referências.",
+      "licao": "A IA é uma boa ferramenta de rascunho, mas a responsabilidade pelas fontes continua a ser tua.",
+      "badge": "autoria_transparente"
+    },
+    "FIM_NEUTRO": {
+      "final": true,
+      "finalTipo": "neutro",
+      "icone": "⚖️",
+      "titulo": "Final: Risco evitado por pouco",
+      "texto": "O relatório já não cita obras falsas, mas omitiste um uso de IA que devia ter sido declarado. Ninguém reparou, desta vez.",
+      "licao": "Corrigir o erro sem o declarar resolve o sintoma, não o problema."
+    },
+    "FIM_REDENCAO": {
+      "final": true,
+      "finalTipo": "neutro",
+      "icone": "🌱",
+      "titulo": "Final: Segunda oportunidade",
+      "texto": "A conversa é desconfortável, mas a franqueza conta. Refazes as referências, declaras a IA e a nota desce, sem processo disciplinar.",
+      "licao": "Assumir cedo um erro reduz as consequências.",
+      "badge": "segunda_oportunidade"
+    },
+    "FIM_MAU": {
+      "final": true,
+      "finalTipo": "mau",
+      "icone": "🚫",
+      "titulo": "Final: Processo disciplinar",
+      "texto": "O docente consulta o histórico do documento e a explicação não se sustenta. Negar o que aconteceu agrava a situação e é aberto um processo por má conduta académica.",
+      "licao": "Fontes inventadas são detetáveis, e negar o que aconteceu pesa mais do que o erro inicial."
+    }
+  }
+}
